@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { HeroService } from '../hero.service';
 
 import { Hero } from '../hero';
-import { Subscriber } from 'rxjs';
+import { Subscriber, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hero-detail',
@@ -36,6 +36,11 @@ export class HeroDetailComponent implements OnInit {
   // voltar para a pag. anterior
   goBack() {
     this.Location.back();
+  }
+
+  save():void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
   }
 
 }
