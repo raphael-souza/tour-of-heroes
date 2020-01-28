@@ -13,6 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
+
 
 @NgModule({
   declarations: [
@@ -21,7 +26,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,14 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    MatFormFieldModule,
+    MatInputModule, 
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    MatAutocompleteModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

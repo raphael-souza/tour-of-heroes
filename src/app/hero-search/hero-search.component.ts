@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
@@ -15,7 +16,7 @@ export class HeroSearchComponent implements OnInit {
   private searchTerms = new Subject<string>();
 
   constructor(private heroServie: HeroService) { }
-
+  searchFrom = new FormControl();
   search(term: string): void {
     this.searchTerms.next(term);
   }

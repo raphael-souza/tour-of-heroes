@@ -1,13 +1,14 @@
 <div id="search-component">
-    <h4><label for="search-box">Pesquisar</label></h4>
+  <mat-form-field>
+    <input matInput placeholder="Pesquisar" #searchBox id="search-box" (input)="search(searchBox.value)">
+  </mat-form-field>
+  <div class="selected-itens">
+    <mat-option *ngFor="let hero of heroes$ | async" value="hero.name" >
+      <nav routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </nav>
+    </mat-option>
+  </div>  
   
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-  
-    <ul class="search-result">
-      <li *ngFor="let hero of heroes$ | async" >
-        <a routerLink="/detail/{{hero.id}}">
-          {{hero.name}}
-        </a>
-      </li>
-    </ul>
+
 </div>
