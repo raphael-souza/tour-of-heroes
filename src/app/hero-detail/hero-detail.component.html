@@ -3,10 +3,18 @@
   <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </label>
+
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="add Hero"  [(ngModel)]="hero.name" placeholder="hero.name" >
+    </mat-form-field>
+
+
+    <button class="btn-add" mat-mini-fab aria-label="add Hero" color="primary" (click)="save()">
+      <i class="material-icons">
+        sync
+      </i>
+    </button>
+
   </div>
-  <button (click)="save()">Salvar</button>
 </div>
-<button (click)="goBack()">go back</button>

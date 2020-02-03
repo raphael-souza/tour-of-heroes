@@ -14,7 +14,6 @@ h1 {
   }
   body, input[type="text"], button {
     color: #333;
-    font-family: Cambria, Georgia;
   }
   /* everywhere else */
   * {
@@ -25,4 +24,9 @@ h1 {
     width: 250px; 
     margin-left: 39%; 
     margin-top: -176px;
+  }
+
+  button {
+    margin: 5px 10px 5px 5px;
+
   }

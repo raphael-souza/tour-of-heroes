@@ -1,23 +1,38 @@
-<div>
-  <label>Hero name:
-    <input #heroName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
-    add
-  </button>
-</div>
+
 
 <ul style="margin-left: 15%;width: 17%;">
-  <i *ngFor="let hero of heroes"style="margin-top: 5px;">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge" >{{hero.id}}</span> {{ hero.name }}
-    </a> 
-    <button class="delete" title="delete hero" (click)="delete(hero)">
-      <i class="material-icons">
-        delete
-      </i>
-    </button><br>
-    
-  </i>
+  <mat-list>
+    <mat-list-item *ngFor="let hero of heroes" style="margin-top: 5px;">
+      <nav routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{ hero.name }}
+      </nav>
+      <button class="delete"  mat-mini-fab color="primary" title="delete hero" routerLink="/detail/{{hero.id}}">
+        <i class="material-icons">
+          edit
+        </i>
+      </button><button class="delete"  mat-mini-fab color="warn" title="delete hero" (click)="delete(hero)">
+        <i class="material-icons">
+          clear
+        </i>
+      </button><br>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+   
+
+  </mat-list>
+  <div class="container add-hero">
+    <form>
+      <mat-form-field class="example-full-width input-hero">
+        <input matInput placeholder="add Hero" #heroName>
+      </mat-form-field>
+  
+  
+      <button class="btn-add" mat-mini-fab aria-label="add Hero" color="primary" (click)="add(heroName.value); heroName.value=''">
+        <i class="material-icons">
+          add
+        </i>
+      </button>
+    </form>
+  
+  </div>  
 </ul>

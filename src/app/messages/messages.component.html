@@ -1,11 +1,25 @@
-<div *ngIf="messageService.messages.length">
+<div id="box-message" _ngcontent-c10="" class="card main-card mb-3 container" *ngIf="messageService.messages.length">
+    <div class="card-header">
+        <div class="grid grid-pad">
+            <div class="col-1-4"> 
+                <span> Mensagens</span> 
+            </div>
+            <div class="col-1-4">
+                <button _ngcontent-tnu-c12="" class="shadow-none bg-danger mat-fab mat-warn" color="warn"
+                    mat-card-icon="" mat-fab="" (click)="messageService.clear()">
+                    <i class="material-icons">
+                        clear_all
+                    </i>
+                </button>
+            </div>
+        </div>
 
-    <h2>Messages</h2>
-    <button mat-raised-button class="clear"
-            (click)="messageService.clear()">clear</button>
-    <div 
-        *ngFor='let message of messageService.messages'> 
-        {{message}} 
     </div>
-  
-  </div>
+    <div _ngcontent-c10="" class="card-body">
+        <mat-toolbar _ngcontent-c10="" class="   mat-toolbar-multiple-rows">
+            <mat-toolbar-row _ngcontent-c10="" class="mat-toolbar-row" *ngFor='let message of messageService.messages'>
+                <span class="message"> {{message}}</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+</div>

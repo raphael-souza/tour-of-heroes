@@ -17,6 +17,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 
 
 @NgModule({
@@ -42,7 +46,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete'
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatListModule
 
   ],
   providers: [],
